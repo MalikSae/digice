@@ -26,7 +26,6 @@
       <!-- Logo -->
       <div class="h-16 flex items-center px-6 border-b border-digice-border-dark">
         <img src="{{ asset('images/digice001-darkbg.png') }}" alt="Digice Logo" class="h-8 w-auto">
-        <span class="ml-2 text-digice-slate text-xs">Admin</span>
       </div>
 
       <!-- Nav -->

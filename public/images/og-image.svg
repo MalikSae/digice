@@ -1,0 +1,16 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0A1628"/>
+  <rect x="0" y="0" width="1200" height="630" fill="url(#mesh)" opacity="0.3"/>
+  <defs>
+    <radialGradient id="mesh" cx="20%" cy="50%">
+      <stop offset="0%" stop-color="#29B6C8"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+  <text x="600" y="280" font-family="Arial" font-size="72" font-weight="bold"
+        fill="white" text-anchor="middle">Digice</text>
+  <text x="600" y="360" font-family="Arial" font-size="28"
+        fill="#29B6C8" text-anchor="middle">We Build What Your Business Needs</text>
+  <text x="600" y="420" font-family="Arial" font-size="20"
+        fill="#64748B" text-anchor="middle">digice.net</text>
+</svg>

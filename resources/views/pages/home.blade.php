@@ -4,7 +4,7 @@
         <div class="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
             <!-- Kiri: Logo -->
             <a href="/" class="flex items-center">
-                <img src="{{ asset('images/digice001-darkbg.png') }}" alt="Digice Logo" class="h-8 w-auto">
+                <img src="{{ asset('images/digice001-darkbg.png') }}" alt="Digice Logo" loading="eager" decoding="async" class="h-8 w-auto">
             </a>
 
             <!-- Tengah: Menu Links (Hidden di Mobile) -->
@@ -75,7 +75,7 @@
             </span>
 
             <!-- Headline -->
-            <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight">
+            <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-white leading-tight px-4 md:px-0">
                 We Build<br>
                 <span class="text-digice-cyan font-mono relative inline-block my-2">
                     <span id="typewriter-text"></span><span class="inline-block w-1.5 md:w-2 bg-digice-cyan h-[0.85em] align-baseline ml-1 animate-blink"></span>
@@ -89,11 +89,11 @@
             </p>
 
             <!-- CTA -->
-            <div class="mt-10 flex gap-4 justify-center flex-wrap">
-                <a href="#kontak" class="magnetic-btn bg-digice-cyan text-digice-navy font-semibold px-8 py-4 rounded-full hover:bg-digice-cyan/90 shadow-[0_0_20px_rgba(34,211,238,0.3)] transition-colors inline-block">
+            <div class="mt-10 flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#kontak" class="magnetic-btn w-full md:w-auto text-center bg-digice-cyan text-digice-navy font-semibold px-8 py-4 rounded-full hover:bg-digice-cyan/90 shadow-[0_0_20px_rgba(34,211,238,0.3)] transition-colors inline-block">
                     Diskusi Project Anda &rarr;
                 </a>
-                <a href="#portofolio" class="border border-digice-border-dark text-white px-8 py-4 rounded-full hover:border-digice-cyan hover:text-digice-cyan transition-colors inline-block">
+                <a href="#portofolio" class="w-full md:w-auto text-center border border-digice-border-dark text-white px-8 py-4 rounded-full hover:border-digice-cyan hover:text-digice-cyan transition-colors inline-block">
                     Lihat Portofolio
                 </a>
             </div>
@@ -205,62 +205,62 @@
                 <!-- SET 1 -->
                 <div class="flex items-center justify-around gap-16 px-8 min-w-max">
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/laravel/FF2D20" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(255,45,32,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/laravel/FF2D20" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(255,45,32,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Laravel</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/vuedotjs/4FC08D" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(79,192,141,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/vuedotjs/4FC08D" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(79,192,141,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Vue.js</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(6,182,212,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/tailwindcss/06B6D4" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(6,182,212,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Tailwind</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/nodedotjs/5FA04E" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(95,160,78,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/nodedotjs/5FA04E" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(95,160,78,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Node.js</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/docker/2496ED" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(36,150,237,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/docker/2496ED" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(36,150,237,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Docker</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/redis/DC382D" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(220,56,45,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/redis/DC382D" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(220,56,45,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Redis</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/figma/F24E1E" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(242,78,30,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/figma/F24E1E" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(242,78,30,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Figma</span>
                     </div>
                 </div>
                 <!-- SET 2 (Duplicate for Loop) -->
                 <div class="flex items-center justify-around gap-16 px-8 min-w-max">
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/laravel/FF2D20" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(255,45,32,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/laravel/FF2D20" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(255,45,32,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Laravel</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/vuedotjs/4FC08D" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(79,192,141,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/vuedotjs/4FC08D" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(79,192,141,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Vue.js</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(6,182,212,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/tailwindcss/06B6D4" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(6,182,212,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Tailwind</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/nodedotjs/5FA04E" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(95,160,78,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/nodedotjs/5FA04E" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(95,160,78,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Node.js</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/docker/2496ED" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(36,150,237,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/docker/2496ED" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(36,150,237,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Docker</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/redis/DC382D" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(220,56,45,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/redis/DC382D" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(220,56,45,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Redis</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/figma/F24E1E" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(242,78,30,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/figma/F24E1E" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(242,78,30,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Figma</span>
                     </div>
                 </div>
@@ -271,62 +271,62 @@
                 <!-- SET 1 -->
                 <div class="flex items-center justify-around gap-16 px-8 min-w-max">
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/react/61DAFB" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(97,218,251,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/react/61DAFB" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(97,218,251,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">React</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/flutter/02569B" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(2,86,155,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/flutter/02569B" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(2,86,155,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Flutter</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/go/00ADD8" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(0,173,216,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/go/00ADD8" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(0,173,216,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Golang</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/postgresql/4169E1" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(65,105,225,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/postgresql/4169E1" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(65,105,225,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">PostgreSQL</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/googlecloud/4285F4" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(66,133,244,0.4)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/googlecloud/4285F4" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(66,133,244,0.4)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Google Cloud</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/typescript/3178C6" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(49,120,198,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/typescript/3178C6" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(49,120,198,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">TypeScript</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/python/3776AB" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(55,118,171,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/python/3776AB" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(55,118,171,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Python</span>
                     </div>
                 </div>
                 <!-- SET 2 (Duplicate for Loop) -->
                 <div class="flex items-center justify-around gap-16 px-8 min-w-max">
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/react/61DAFB" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(97,218,251,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/react/61DAFB" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(97,218,251,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">React</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/flutter/02569B" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(2,86,155,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/flutter/02569B" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(2,86,155,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Flutter</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/go/00ADD8" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(0,173,216,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/go/00ADD8" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(0,173,216,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Golang</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/postgresql/4169E1" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(65,105,225,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/postgresql/4169E1" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(65,105,225,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">PostgreSQL</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/googlecloud/4285F4" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(66,133,244,0.4)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/googlecloud/4285F4" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(66,133,244,0.4)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Google Cloud</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/typescript/3178C6" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(49,120,198,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/typescript/3178C6" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(49,120,198,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">TypeScript</span>
                     </div>
                     <div class="flex flex-col items-center justify-center gap-3 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer group">
-                        <img src="https://cdn.simpleicons.org/python/3776AB" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(55,118,171,0.6)]">
+                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/python/3776AB" class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 group-hover:drop-shadow-[0_0_15px_rgba(55,118,171,0.6)]">
                         <span class="text-[10px] font-bold text-gray-800 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity absolute -bottom-5">Python</span>
                     </div>
                 </div>
@@ -438,12 +438,12 @@
         </div>
 
         <!-- Filters -->
-        <div class="mt-8 flex gap-2 justify-center flex-wrap">
-            <button @click="filter = 'semua'" :class="filter === 'semua' ? 'bg-digice-cyan text-digice-navy border-digice-cyan' : 'bg-white text-gray-500 border-gray-200 hover:border-digice-cyan'" class="px-4 py-2 rounded-full text-sm font-medium border transition-colors">Semua</button>
-            <button @click="filter = 'website'" :class="filter === 'website' ? 'bg-digice-cyan text-digice-navy border-digice-cyan' : 'bg-white text-gray-500 border-gray-200 hover:border-digice-cyan'" class="px-4 py-2 rounded-full text-sm font-medium border transition-colors">Website</button>
-            <button @click="filter = 'web-app'" :class="filter === 'web-app' ? 'bg-digice-cyan text-digice-navy border-digice-cyan' : 'bg-white text-gray-500 border-gray-200 hover:border-digice-cyan'" class="px-4 py-2 rounded-full text-sm font-medium border transition-colors">Web App</button>
-            <button @click="filter = 'e-commerce'" :class="filter === 'e-commerce' ? 'bg-digice-cyan text-digice-navy border-digice-cyan' : 'bg-white text-gray-500 border-gray-200 hover:border-digice-cyan'" class="px-4 py-2 rounded-full text-sm font-medium border transition-colors">E-Commerce</button>
-            <button @click="filter = 'marketing'" :class="filter === 'marketing' ? 'bg-digice-cyan text-digice-navy border-digice-cyan' : 'bg-white text-gray-500 border-gray-200 hover:border-digice-cyan'" class="px-4 py-2 rounded-full text-sm font-medium border transition-colors">Marketing</button>
+        <div class="mt-8 flex gap-2 justify-start md:justify-center overflow-x-auto flex-nowrap md:flex-wrap pb-2 px-2">
+            <button @click="filter = 'semua'" :class="filter === 'semua' ? 'bg-digice-cyan text-digice-navy border-digice-cyan' : 'bg-white text-gray-500 border-gray-200 hover:border-digice-cyan'" class="px-4 py-2 rounded-full text-sm font-medium border transition-colors whitespace-nowrap flex-shrink-0">Semua</button>
+            <button @click="filter = 'website'" :class="filter === 'website' ? 'bg-digice-cyan text-digice-navy border-digice-cyan' : 'bg-white text-gray-500 border-gray-200 hover:border-digice-cyan'" class="px-4 py-2 rounded-full text-sm font-medium border transition-colors whitespace-nowrap flex-shrink-0">Website</button>
+            <button @click="filter = 'web-app'" :class="filter === 'web-app' ? 'bg-digice-cyan text-digice-navy border-digice-cyan' : 'bg-white text-gray-500 border-gray-200 hover:border-digice-cyan'" class="px-4 py-2 rounded-full text-sm font-medium border transition-colors whitespace-nowrap flex-shrink-0">Web App</button>
+            <button @click="filter = 'e-commerce'" :class="filter === 'e-commerce' ? 'bg-digice-cyan text-digice-navy border-digice-cyan' : 'bg-white text-gray-500 border-gray-200 hover:border-digice-cyan'" class="px-4 py-2 rounded-full text-sm font-medium border transition-colors whitespace-nowrap flex-shrink-0">E-Commerce</button>
+            <button @click="filter = 'marketing'" :class="filter === 'marketing' ? 'bg-digice-cyan text-digice-navy border-digice-cyan' : 'bg-white text-gray-500 border-gray-200 hover:border-digice-cyan'" class="px-4 py-2 rounded-full text-sm font-medium border transition-colors whitespace-nowrap flex-shrink-0">Marketing</button>
         </div>
 
         <!-- Grid -->
@@ -452,11 +452,11 @@
                 @php
                     $catSlug = \Illuminate\Support\Str::lower(str_replace(' ', '-', $portfolio->category));
                 @endphp
-                <div x-show="filter === 'semua' || filter === '{{ $catSlug }}'" x-transition style="display:none;" class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                <div x-show="filter === 'semua' || filter === '{{ $catSlug }}'" x-transition style="display:none;" class="group bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
                     <!-- Thumbnail -->
-                    <div class="relative aspect-video bg-gray-100 flex-shrink-0">
+                    <div class="relative aspect-video bg-gray-100 flex-shrink-0 overflow-hidden">
                         @if($portfolio->hasMedia('screenshots'))
-                            <img src="{{ $portfolio->getFirstMediaUrl('screenshots') }}" class="w-full h-full object-cover">
+                            <img src="{{ $portfolio->getFirstMediaUrl('screenshots') }}" alt="{{ $portfolio->name }}" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                         @else
                             <div class="w-full h-full flex flex-col items-center justify-center text-gray-400">
                                 <svg class="w-8 h-8 mb-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -481,7 +481,7 @@
                             @foreach($portfolio->techStacks->take(4) as $tech)
                                 <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-gray-50 border border-gray-100 text-xs font-medium text-gray-600">
                                     @if($tech->icon)
-                                        <img src="https://cdn.simpleicons.org/{{ $tech->icon }}/64748B" class="w-3.5 h-3.5" onerror="this.style.display='none'">
+                                        <img loading="lazy" decoding="async" src="https://cdn.simpleicons.org/{{ $tech->icon }}/64748B" class="w-3.5 h-3.5" onerror="this.style.display='none'">
                                     @endif
                                     {{ $tech->name }}
                                 </span>
@@ -530,7 +530,7 @@
                     <p class="text-gray-300 italic mb-6 flex-1">"{{ $testimonial->content }}"</p>
                     <div class="flex items-center gap-3 mt-auto">
                         @if($testimonial->hasMedia('avatar'))
-                            <img src="{{ $testimonial->getFirstMediaUrl('avatar') }}" class="w-10 h-10 rounded-full object-cover">
+                            <img src="{{ $testimonial->getFirstMediaUrl('avatar') }}" alt="{{ $testimonial->name }}" loading="lazy" decoding="async" class="w-10 h-10 rounded-full object-cover">
                         @else
                             <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white font-bold text-sm">
                                 {{ strtoupper(substr($testimonial->name, 0, 2)) }}
@@ -569,7 +569,7 @@
                     $whatsapp = $setting?->whatsapp_number ?? '6281222771761';
                     $address = $setting?->address;
                 @endphp
-                <a href="https://wa.me/{{ $whatsapp }}?text=Halo%20Digice%2C%20saya%20ingin%20diskusi%20project..." target="_blank" class="magnetic-btn inline-flex items-center justify-center gap-2 bg-white text-digice-navy font-bold px-8 py-4 rounded-full hover:bg-gray-100 shadow-[0_10px_30px_rgba(255,255,255,0.15)] transition-colors">
+                <a href="https://wa.me/{{ $whatsapp }}?text=Halo%20Digice%2C%20saya%20ingin%20diskusi%20project..." target="_blank" class="magnetic-btn flex md:inline-flex w-full md:w-auto items-center justify-center gap-2 bg-white text-digice-navy font-bold px-8 py-4 rounded-full hover:bg-gray-100 shadow-[0_10px_30px_rgba(255,255,255,0.15)] transition-colors">
                     <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                     </svg>
@@ -586,7 +586,7 @@
         <div class="max-w-4xl mx-auto flex flex-col items-center text-center">
             <!-- Logo -->
             <a href="/" class="inline-block mb-6">
-                <img src="{{ asset('images/digice001-darkbg.png') }}" alt="Digice Logo" class="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity">
+                <img src="{{ asset('images/digice001-darkbg.png') }}" alt="Digice Logo" loading="lazy" decoding="async" class="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity">
             </a>
 
             <!-- Address & WA -->

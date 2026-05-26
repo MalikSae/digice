@@ -14,6 +14,9 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { background-color: #0A1628; height: 100%; overflow: hidden; }
+
         /* ── Ambient glow blobs ─────────────────────────── */
         .blob {
             position: absolute;
@@ -136,8 +139,8 @@
                         @enderror
                     </div>
 
-                    {{-- Remember me + Forgot password --}}
-                    <div class="flex items-center justify-between mb-6">
+                    {{-- Remember me --}}
+                    <div class="flex items-center mb-6">
                         <label for="remember_me" class="flex items-center gap-2 cursor-pointer select-none">
                             <input id="remember_me"
                                    type="checkbox"
@@ -146,17 +149,8 @@
                                    style="accent-color:#22d3ee;">
                             <span class="text-sm" style="color:#94a3b8;">Ingat saya</span>
                         </label>
-
-                        @if (Route::has('password.request'))
-                            <a href="{{ route('password.request') }}"
-                               class="text-sm transition-colors"
-                               style="color:#22d3ee;"
-                               onmouseover="this.style.color='#a5f3fc'"
-                               onmouseout="this.style.color='#22d3ee'">
-                                Lupa password?
-                            </a>
-                        @endif
                     </div>
+
 
                     {{-- Submit button --}}
                     <button type="submit"

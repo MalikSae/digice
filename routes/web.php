@@ -40,4 +40,5 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/tech-stacks', App\Livewire\Admin\TechStack\Index::class)->name('tech-stacks.index');
     Route::get('/testimonials', App\Livewire\Admin\Testimonial\Index::class)->name('testimonials.index');
     Route::get('/setting', App\Livewire\Admin\Setting\Index::class)->name('setting.index');
+    Route::get('/team', App\Livewire\Admin\Team\Index::class)->name('team.index');
 });

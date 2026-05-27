@@ -1,18 +1,18 @@
 <div>
     <!-- HEADER BAR -->
     <div class="flex items-center justify-between mb-6">
-        <div class="flex items-center gap-3">
-            <h2 class="text-xl font-bold text-digice-dark-slate">Kelola Team</h2>
-            <span class="px-2 py-1 text-xs font-medium bg-digice-navy/10 text-digice-navy rounded-full">
+        <div class="flex items-center gap-3 min-w-0">
+            <h2 class="text-lg md:text-xl font-bold text-digice-dark-slate truncate">Kelola Team</h2>
+            <span class="px-2 py-1 text-xs font-medium bg-digice-navy/10 text-digice-navy rounded-full flex-shrink-0">
                 {{ $this->users->count() }} Admin
             </span>
         </div>
         <button wire:click="openCreate"
-                class="px-4 py-2 bg-digice-navy text-white text-sm font-medium rounded-lg hover:bg-digice-navy/90 transition-colors shadow-sm flex items-center gap-2">
+                class="flex-shrink-0 px-3 md:px-4 py-2 bg-digice-navy text-white text-sm font-medium rounded-lg hover:bg-digice-navy/90 transition-colors shadow-sm flex items-center gap-2">
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
             </svg>
-            Tambah Admin
+            <span class="hidden sm:inline">Tambah Admin</span>
         </button>
     </div>
 
@@ -34,7 +34,8 @@
     <!-- TABLE -->
     @if($this->users->count() > 0)
         <div class="bg-white rounded-xl border border-digice-border shadow-card overflow-hidden">
-            <table class="w-full text-sm">
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm min-w-[560px]">
                 <thead>
                     <tr class="border-b border-digice-border bg-gray-50">
                         <th class="text-left px-6 py-3 text-xs font-semibold text-digice-slate uppercase tracking-wider">Admin</th>
@@ -104,7 +105,8 @@
                     @endforeach
                 </tbody>
             </table>
-        </div>
+          </div>{{-- /overflow-x-auto --}}
+        </div>{{-- /card --}}
     @else
         <!-- EMPTY STATE -->
         <div class="text-center py-16 bg-white border border-digice-border border-dashed rounded-2xl">

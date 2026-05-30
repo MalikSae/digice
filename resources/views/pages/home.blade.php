@@ -430,7 +430,7 @@
     </section>
 
     <!-- SECTION 6: PORTOFOLIO -->
-    <section id="portofolio" class="bg-gray-50 py-24 px-6" x-data="{ filter: 'semua' }">
+    <section id="portofolio" class="bg-gray-50 py-24 px-6" x-data="{ filter: 'semua', lightboxOpen: false, lightboxImage: '' }">
         <div class="max-w-2xl mx-auto text-center">
             <span class="text-digice-cyan text-sm font-semibold uppercase tracking-widest">Portofolio</span>
             <h2 class="text-4xl font-bold text-digice-dark-slate mt-3">Ini sebagian dari apa yang sudah kami kerjakan.</h2>
@@ -454,9 +454,14 @@
                 @endphp
                 <div x-show="filter === 'semua' || filter === '{{ $catSlug }}'" x-transition class="group bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
                     <!-- Thumbnail -->
-                    <div class="relative aspect-video bg-gray-100 flex-shrink-0 overflow-hidden">
+                    <div @click="lightboxImage = '{{ $portfolio->getFirstMediaUrl('screenshots') }}'; lightboxOpen = true" class="relative aspect-video bg-gray-100 flex-shrink-0 overflow-hidden cursor-pointer group/img">
                         @if($portfolio->hasMedia('screenshots'))
-                            <img src="{{ $portfolio->getFirstMediaUrl('screenshots') }}" alt="{{ $portfolio->name }}" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <img src="{{ $portfolio->getFirstMediaUrl('screenshots') }}" alt="{{ $portfolio->name }}" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105">
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607ZM10.5 7.5v6m3-3h-6" />
+                                </svg>
+                            </div>
                         @else
                             <div class="w-full h-full flex flex-col items-center justify-center text-gray-400">
                                 <svg class="w-8 h-8 mb-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -510,6 +515,18 @@
                     <p class="text-gray-500">Portfolio sedang disiapkan...</p>
                 </div>
             @endforelse
+        </div>
+
+        <!-- Lightbox Modal -->
+        <div x-show="lightboxOpen" style="display: none;" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm p-6 md:p-12">
+            <button @click="lightboxOpen = false" class="absolute top-6 right-6 text-white hover:bg-white/20 bg-black/50 p-3 rounded-full backdrop-blur-md transition-all z-10">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div @click.outside="lightboxOpen = false" class="relative flex items-center justify-center max-w-5xl max-h-full">
+                <img :src="lightboxImage" class="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl ring-1 ring-white/10" alt="Screenshot Preview">
+            </div>
         </div>
     </section>
 

@@ -10,15 +10,16 @@ use Livewire\Component;
 
 class Index extends Component
 {
-    public string $search = '';
+    public ?string $search = '';
     public bool $showModal = false;
     public ?int $editingId = null;
 
     // Form fields
-    public string $name = '';
-    public string $email = '';
-    public string $password = '';
-    public string $password_confirmation = '';
+    public ?string $name = '';
+    public ?string $email = '';
+    public ?string $password = '';
+    public ?string $password_confirmation = '';
+    public ?string $position = '';
 
     // Delete confirm
     public ?int $deletingId = null;

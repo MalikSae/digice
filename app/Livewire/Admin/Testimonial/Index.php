@@ -12,14 +12,14 @@ class Index extends Component
 {
     use WithFileUploads;
 
-    public string $search = '';
+    public ?string $search = '';
     public bool $showModal = false;
     public ?int $editingId = null;
 
     // Form fields
-    public string $name = '';
-    public string $position = '';
-    public string $content = '';
+    public ?string $name = '';
+    public ?string $position = '';
+    public ?string $content = '';
     public int $rating = 5;
     public bool $is_active = true;
     public int $sort_order = 0;

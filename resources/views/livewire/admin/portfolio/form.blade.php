@@ -3,6 +3,13 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <!-- KOLOM KIRI (Form Utama) -->
             <div class="lg:col-span-2 space-y-6">
+                <!-- ERROR UMUM JIKA ADA -->
+                @error('general')
+                    <div class="p-4 bg-red-50 text-red-600 rounded-lg border border-red-200">
+                        {{ $message }}
+                    </div>
+                @enderror
+
                 <!-- CARD 1: Informasi Project -->
                 <div class="bg-white rounded-xl border border-digice-border p-6 shadow-sm">
                     <h3 class="text-lg font-bold text-digice-dark-slate mb-4">Informasi Project</h3>
@@ -11,14 +18,14 @@
                         <div>
                             <label class="block text-sm font-medium text-digice-dark-slate mb-1">Nama Project <span class="text-red-500">*</span></label>
                             <input wire:model="name" type="text" placeholder="Contoh: Sistem Manajemen Umroh" class="w-full rounded-lg border border-digice-border px-3 py-2 text-sm focus:border-digice-cyan focus:ring-1 focus:ring-digice-cyan bg-white">
-                            @error('name') <span class="text-xs text-red-500 mt-1 block">{{ $message }}</span> @enderror
+                            @error('name') <span class="text-xs text-red-500 mt-1 block font-medium">{{ $message }}</span> @enderror
                         </div>
 
                         <div>
                             <label class="block text-sm font-medium text-digice-dark-slate mb-1">Deskripsi</label>
                             <textarea wire:model.live="description" rows="4" placeholder="Deskripsi singkat project..." class="w-full rounded-lg border border-digice-border px-3 py-2 text-sm focus:border-digice-cyan focus:ring-1 focus:ring-digice-cyan bg-white"></textarea>
                             <div class="flex justify-between mt-1">
-                                @error('description') <span class="text-xs text-red-500">{{ $message }}</span> @else <span></span> @enderror
+                                @error('description') <span class="text-xs text-red-500 font-medium">{{ $message }}</span> @else <span></span> @enderror
                                 <span class="text-xs text-gray-500" x-data="{ count: 0 }" x-init="$watch('$wire.description', value => count = value ? value.length : 0)"><span x-text="count"></span>/1000</span>
                             </div>
                         </div>
@@ -26,7 +33,7 @@
                         <div>
                             <label class="block text-sm font-medium text-digice-dark-slate mb-1">URL Live Project</label>
                             <input wire:model="url" type="url" placeholder="https://..." class="w-full rounded-lg border border-digice-border px-3 py-2 text-sm focus:border-digice-cyan focus:ring-1 focus:ring-digice-cyan bg-white">
-                            @error('url') <span class="text-xs text-red-500 mt-1 block">{{ $message }}</span> @enderror
+                            @error('url') <span class="text-xs text-red-500 mt-1 block font-medium">{{ $message }}</span> @enderror
                         </div>
                     </div>
                 </div>
@@ -49,9 +56,30 @@
                         </div>
                     @endif
 
-                    <div class="relative">
-                        <input wire:model="screenshots" type="file" multiple accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" title="">
-                        <div class="w-full border-2 border-dashed border-digice-border rounded-xl p-8 text-center bg-gray-50 hover:bg-gray-100 transition-colors">
+                    <div class="relative" x-data="{
+                        previews: [],
+                        handleFileSelect(event) {
+                            const files = event.target.files;
+                            this.previews = [];
+                            if (!files) return;
+                            
+                            Array.from(files).forEach(file => {
+                                if(file.type.startsWith('image/')) {
+                                    const reader = new FileReader();
+                                    reader.onload = (e) => {
+                                        this.previews.push({
+                                            url: e.target.result,
+                                            name: file.name,
+                                            size: (file.size / 1024).toFixed(1)
+                                        });
+                                    };
+                                    reader.readAsDataURL(file);
+                                }
+                            });
+                        }
+                    }">
+                        <input wire:model="screenshots" x-on:change="handleFileSelect" type="file" multiple accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" title="Pilih gambar screenshot">
+                        <div class="w-full border-2 border-dashed border-digice-border rounded-xl p-8 text-center bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer">
                             <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-50 text-blue-600 mb-3">
                                 <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
@@ -59,22 +87,20 @@
                             </div>
                             <p class="text-sm font-medium text-digice-dark-slate">Klik atau drag & drop screenshot di sini</p>
                         </div>
-                    </div>
-                    
-                    <div wire:loading wire:target="screenshots" class="text-xs text-blue-600 mt-2">Uploading...</div>
-
-                    @if($screenshots)
-                        <div class="mt-4 space-y-2">
-                            @foreach($screenshots as $screenshot)
-                                <div class="flex items-center justify-between p-2 bg-blue-50/50 rounded-lg border border-blue-100 text-xs">
-                                    <span class="truncate pr-4 font-medium text-blue-800">{{ $screenshot->getClientOriginalName() }}</span>
-                                    <span class="text-blue-600 whitespace-nowrap">{{ round($screenshot->getSize() / 1024, 1) }} KB</span>
+                        
+                        <!-- AlpineJS Instant Preview -->
+                        <div x-show="previews.length > 0" class="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4" style="display: none;">
+                            <template x-for="(preview, index) in previews" :key="index">
+                                <div class="relative aspect-video rounded-lg overflow-hidden bg-blue-50 border border-blue-200 group shadow-sm">
+                                    <img :src="preview.url" class="w-full h-full object-cover">
+                                    <div class="absolute inset-x-0 bottom-0 bg-black/60 px-2 py-1 text-[10px] text-white truncate flex justify-between items-center backdrop-blur-sm">
+                                        <span class="truncate pr-2" x-text="preview.name"></span>
+                                        <span class="whitespace-nowrap" x-text="preview.size + ' KB'"></span>
+                                    </div>
                                 </div>
-                            @endforeach
+                            </template>
                         </div>
-                    @endif
-                    @error('screenshots.*') <span class="text-xs text-red-500 mt-1 block">{{ $message }}</span> @enderror
-                    @error('screenshots') <span class="text-xs text-red-500 mt-1 block">{{ $message }}</span> @enderror
+                    </div>
                 </div>
 
                 <!-- CARD 3: Tech Stack -->
@@ -128,15 +154,15 @@
                                 <option value="E-Commerce">E-Commerce</option>
                                 <option value="Marketing">Marketing</option>
                             </select>
-                            @error('category') <span class="text-xs text-red-500 mt-1 block">{{ $message }}</span> @enderror
+                            @error('category') <span class="text-xs text-red-500 mt-1 block font-medium">{{ $message }}</span> @enderror
                         </div>
 
                         <!-- Sort Order -->
                         <div>
                             <label class="block text-sm font-medium text-digice-dark-slate mb-1">Sort Order</label>
                             <input wire:model="sort_order" type="number" min="0" class="w-full rounded-lg border border-digice-border px-3 py-2 text-sm focus:border-digice-cyan focus:ring-1 focus:ring-digice-cyan bg-white">
-                            <p class="text-xs text-gray-500 mt-1">Urutan tampil di landing page (angka kecil = tampil lebih awal)</p>
-                            @error('sort_order') <span class="text-xs text-red-500 mt-1 block">{{ $message }}</span> @enderror
+                            <p class="text-xs text-gray-500 mt-1">Urutan tampil (angka lebih kecil = lebih awal)</p>
+                            @error('sort_order') <span class="text-xs text-red-500 mt-1 block font-medium">{{ $message }}</span> @enderror
                         </div>
 
                         <!-- Toggle Featured -->
@@ -156,12 +182,13 @@
 
                         <!-- Actions -->
                         <div class="space-y-3 pt-2">
-                            <button type="submit" class="w-full px-4 py-2 bg-digice-cyan text-white text-sm font-medium rounded-lg hover:bg-digice-cyan/90 transition-colors shadow-sm flex items-center justify-center gap-2">
+                            <button type="submit" wire:loading.attr="disabled" class="w-full px-4 py-2 bg-digice-cyan text-white text-sm font-medium rounded-lg hover:bg-digice-cyan/90 transition-colors shadow-sm flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
                                 <svg wire:loading wire:target="save" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                 </svg>
-                                {{ $isEditing ? 'Update Portfolio' : 'Simpan Portfolio' }}
+                                <span wire:loading.remove wire:target="save">{{ $isEditing ? 'Update Portfolio' : 'Simpan Portfolio' }}</span>
+                                <span wire:loading wire:target="save">Menyimpan...</span>
                             </button>
                             <a href="{{ route('admin.portfolio.index') }}" class="w-full block text-center px-4 py-2 text-sm font-medium text-digice-slate hover:bg-gray-50 rounded-lg transition-colors border border-transparent hover:border-gray-200">
                                 Batal

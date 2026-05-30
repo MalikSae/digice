@@ -452,7 +452,7 @@
                 @php
                     $catSlug = \Illuminate\Support\Str::lower(str_replace(' ', '-', $portfolio->category));
                 @endphp
-                <div x-show="filter === 'semua' || filter === '{{ $catSlug }}'" x-transition style="display:none;" class="group bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                <div x-show="filter === 'semua' || filter === '{{ $catSlug }}'" x-transition class="group bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
                     <!-- Thumbnail -->
                     <div class="relative aspect-video bg-gray-100 flex-shrink-0 overflow-hidden">
                         @if($portfolio->hasMedia('screenshots'))
@@ -474,7 +474,9 @@
                     <!-- Content -->
                     <div class="p-5 flex-1 flex flex-col">
                         <h3 class="font-bold text-lg text-digice-dark-slate">{{ $portfolio->name }}</h3>
-                        <p class="text-sm text-gray-500 line-clamp-2 mt-1">{{ $portfolio->description ?? 'Tidak ada deskripsi.' }}</p>
+                        @if($portfolio->description)
+                        <p class="text-sm text-gray-500 line-clamp-2 mt-1">{{ $portfolio->description }}</p>
+                        @endif
 
                         <!-- Tech Stack -->
                         <div class="mt-4 flex flex-wrap gap-2">

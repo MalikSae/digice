@@ -9,16 +9,16 @@ use Livewire\Component;
 
 class Index extends Component
 {
-    public string $search = '';
-    public string $filterCategory = '';
+    public ?string $search = '';
+    public ?string $filterCategory = '';
     public bool $showModal = false;
     public ?int $editingId = null;
 
     // Form fields
-    public string $name = '';
-    public string $category = '';
-    public string $icon = '';
-    public string $color = '#000000';
+    public ?string $name = '';
+    public ?string $category = '';
+    public ?string $icon = '';
+    public ?string $color = '#000000';
 
     // Konfirmasi hapus
     public ?int $deletingId = null;

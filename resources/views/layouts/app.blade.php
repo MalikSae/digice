@@ -30,7 +30,7 @@
   <meta name="twitter:image" content="{{ $ogImage ?? asset('images/og-image.svg') }}">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+  <link rel="icon" type="image/png" href="{{ asset('images/icon.png') }}">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/apple-touch-icon.png') }}">
 
   <!-- Fonts -->

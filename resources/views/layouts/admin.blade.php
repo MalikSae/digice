@@ -6,6 +6,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>{{ $pageTitle ?? 'Admin' }} — Digice</title>
+  <link rel="icon" type="image/png" href="{{ asset('images/icon.png') }}">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
